@@ -6,7 +6,7 @@
 # [3]: https://www.w3schools.com/python/gloss_python_random_number.asp
 
 import sqlite3 # [1]
-import names # [2]
+# import names # [2]
 import random # [3]
 
 
@@ -39,7 +39,8 @@ def get_time():
 	the_count = 20
 	
 	for x in range(the_count):
-		curEmployee = names.get_full_name()
+		curEmployee = "John Stevenson"
+		# curEmployee = names.get_full_name()
 		the_names.append(curEmployee)
 	
 	for x in range(the_count):
