@@ -22,7 +22,7 @@ app = Flask(__name__)
 def get_time():
 	# Step 1: Import the SQLite library
 	# Step 2: Connect to the database (or create a new one if it doesn't exist)
-	conn = sqlite3.connect('example.db')
+	conn = sqlite3.connect('example.db') 
 	# Step 3: Create a cursor object to interact with the database  
 	cursor = conn.cursor()
   
