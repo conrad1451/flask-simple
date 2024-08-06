@@ -73,16 +73,22 @@ def get_time():
 	}
 
 	employee_list = []
-	names_list = []
+	names_list = ['John Doe', 'Ford Mustang', 'Mike Johnson']
+
+	for cur_name in names_list:
+		cursor.execute("INSERT INTO employees (name, position, salary) VALUES (?, ?, ?)", (cur_name, 'Software Engineer', 80000))
+		conn.commit()
+		
+		
 	
-	cursor.execute("INSERT INTO employees (name, position, salary) VALUES (?, ?, ?)", ('John Doe', 'Software Engineer', 80000))
-	conn.commit()
+	# cursor.execute("INSERT INTO employees (name, position, salary) VALUES (?, ?, ?)", ('John Doe', 'Software Engineer', 80000))
+	# conn.commit()
 	
-	cursor.execute("INSERT INTO employees (name, position, salary) VALUES (?, ?, ?)", ('Ford Mustang', 'Software Engineer', 78000))
-	conn.commit()
+	# cursor.execute("INSERT INTO employees (name, position, salary) VALUES (?, ?, ?)", ('Ford Mustang', 'Software Engineer', 78000))
+	# conn.commit()
  
-	cursor.execute("INSERT INTO employees (name, position, salary) VALUES (?, ?, ?)", ('Mike Johnson', 'Software Engineer', 62000))
-	conn.commit()
+	# cursor.execute("INSERT INTO employees (name, position, salary) VALUES (?, ?, ?)", ('Mike Johnson', 'Software Engineer', 62000))
+	# conn.commit()
 	
 	# Step 6: Query data from the 'employees' table
 	# cursor.execute("SELECT name FROM employees")
@@ -91,15 +97,15 @@ def get_time():
 	for row in rows2:
 		# names_list.append(row)
 		employee_list.append({"name": row[1], "position": row[2], "salary": row[3]})
-		print(row)
+		# print(row)
 	
-	# Step 7: Update the salary of the employee with id 1
-	cursor.execute("UPDATE employees SET salary = ? WHERE id = ?", (90000, 1))
-	conn.commit()
+	# # Step 7: Update the salary of the employee with id 1
+	# cursor.execute("UPDATE employees SET salary = ? WHERE id = ?", (90000, 1))
+	# conn.commit()
 	
-	# Step 8: Delete the employee with id 1
-	cursor.execute("DELETE FROM employees WHERE id = ?", (1,))
-	conn.commit()
+	# # Step 8: Delete the employee with id 1
+	# cursor.execute("DELETE FROM employees WHERE id = ?", (1,))
+	# conn.commit()
 	
 	# Step 9: Close the connection when you're done
 	conn.close()
