@@ -85,14 +85,6 @@ def get_time():
 	conn.commit()
 	
 	# Step 6: Query data from the 'employees' table
-	cursor.execute("SELECT * FROM employees")
-	rows = cursor.fetchall()
-	
-	# Print the rows
-	for row in rows:
-		print(row)
-		
-	# Step 6.4: Query more data from the 'employees' table
 	# cursor.execute("SELECT name FROM employees")
 	cursor.execute("SELECT * FROM employees")
 	rows2 = cursor.fetchall()
@@ -113,11 +105,6 @@ def get_time():
 	conn.close()
 	# Returning an api for showing in reactjs
 	
-	# return {
-	# 'Name':"Conrad", 
-	# "Age":"24",
-	# "programming":"python, but sometimes JavaScript ;)"
-	# }
 	# return thisdict
 	return employee_list
 
