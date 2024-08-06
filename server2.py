@@ -64,6 +64,14 @@ def get_time():
 	# 	conn.commit()
 	
 	
+
+
+	thisdict = {
+		"Name": "Ford",
+		"Age": "Mustang",
+		"programming": "1964"
+	}
+	
 	cursor.execute("INSERT INTO employees (name, position, salary) VALUES (?, ?, ?)", ('John Doe', 'Software Engineer', 80000))
 	conn.commit()
 	
@@ -86,11 +94,13 @@ def get_time():
 	# Step 9: Close the connection when you're done
 	conn.close()
 	# Returning an api for showing in reactjs
-	return {
-	'Name':"Conrad", 
-	"Age":"24",
-	"programming":"python, but sometimes JavaScript ;)"
-	}
+	
+	# return {
+	# 'Name':"Conrad", 
+	# "Age":"24",
+	# "programming":"python, but sometimes JavaScript ;)"
+	# }
+	return thisdict
 
 
 
