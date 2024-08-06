@@ -49,19 +49,23 @@ def get_time():
 		# curEmployee = names.get_full_name()
 		the_fields.append(curJob)
 	
-	for x in range(the_count):
-		the_salaries = 1000*random.randrange(44,85)
-		# print(the_salaries) 
-		the_salaries.append(str(the_salaries))
+	# for x in range(the_count):
+	# 	the_salaries = 1000*random.randrange(44,85)
+	# 	# print(the_salaries)
+	# 	a = 5
+	# 	a = str(5)
+	# 	print(a)
+	# 	the_salaries.append("str(the_salaries)")
+	# 	# the_salaries.append(str(the_salaries))
 	
 	
-	for x in range(the_count):
-		cursor.execute("INSERT INTO employees (name, position, salary) VALUES (?, ?, ?)", (the_names[the_count], the_fields[the_count], the_salaries[the_count]))
-		conn.commit()
+	# for x in range(the_count):
+	# 	cursor.execute("INSERT INTO employees (name, position, salary) VALUES (?, ?, ?)", (the_names[the_count], the_fields[the_count], the_salaries[the_count]))
+	# 	conn.commit()
 	
 	
-	#cursor.execute("INSERT INTO employees (name, position, salary) VALUES (?, ?, ?)", ('John Doe', 'Software Engineer', 80000))
-	#conn.commit()
+	cursor.execute("INSERT INTO employees (name, position, salary) VALUES (?, ?, ?)", ('John Doe', 'Software Engineer', 80000))
+	conn.commit()
 	
 	# Step 6: Query data from the 'employees' table
 	cursor.execute("SELECT * FROM employees")
