@@ -9,6 +9,26 @@ import sqlite3 # [1]
 import names # [2]
 import random # [3]
 
+
+# from flask import Flask
+
+
+# # Initializing flask app
+# app = Flask(__name__)
+
+
+# # Route for seeing a data
+# @app.route('/')
+# def get_time():
+
+# 	# Returning an api for showing in reactjs
+# 	return {
+# 		'Name':"Conrad", 
+# 		"Age":"24",
+# 		"programming":"python, but sometimes JavaScript ;)"
+# 		}
+
+
 # Step 1: Import the SQLite library
 # Step 2: Connect to the database (or create a new one if it doesn't exist)
 conn = sqlite3.connect('example.db')
