@@ -93,7 +93,8 @@ def get_time():
 		print(row)
 		
 	# Step 6.4: Query more data from the 'employees' table
-	cursor.execute("SELECT name FROM employees")
+	# cursor.execute("SELECT name FROM employees")
+	cursor.execute("SELECT * FROM employees")
 	rows2 = cursor.fetchall()
 	for row in rows2:
 		# names_list.append(row)
