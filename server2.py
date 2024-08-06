@@ -27,8 +27,7 @@ def get_time():
 	cursor = conn.cursor()
   
   # Step 4: Create a table called 'employees' with columns 'id', 'name', 'position', and 'salary'
-  cursor.execute('''CREATE TABLE IF NOT EXISTS employees
-                    (id INTEGER PRIMARY KEY, name TEXT, position TEXT, salary REAL)''')
+  cursor.execute('''CREATE TABLE IF NOT EXISTS employees (id INTEGER PRIMARY KEY, name TEXT, position TEXT, salary REAL)''')
   conn.commit()
   
   # Step 5: Insert some new employees into the 'employees' table
