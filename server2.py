@@ -96,7 +96,8 @@ def get_time():
 	cursor.execute("SELECT name FROM employees")
 	rows2 = cursor.fetchall()
 	for row in rows2:
-		names_list.append(row)
+		# names_list.append(row)
+		employee_list.append({"name": row[1], "position": row[2], "salary": row[3]})
 		print(row)
 	
 	# Step 7: Update the salary of the employee with id 1
@@ -116,7 +117,9 @@ def get_time():
 	# "Age":"24",
 	# "programming":"python, but sometimes JavaScript ;)"
 	# }
-	return thisdict
+	# return thisdict
+	return employee_list
+
 
 
 
