@@ -1,7 +1,4 @@
-# This is an SQLite demo originally found on this medium article
-
 # Sources: 
-# [1]: https://medium.com/nishkoder/using-sqlite-database-in-python-projects-73b4d827f1c4
 # [2]: https://treyhunner.com/2013/02/random-name-generator/
 # [3]: https://www.w3schools.com/python/gloss_python_random_number.asp
 
@@ -20,13 +17,12 @@ app = Flask(__name__)
 # Route for seeing a data
 @app.route('/')
 def get_time():
-	# Step 1: Import the SQLite library
-	# Step 2: Connect to the database (or create a new one if it doesn't exist)
+	# CHQ: Connect to the database (or create a new one if it doesn't exist)
 	conn = sqlite3.connect('example.db') 
-	# Step 3: Create a cursor object to interact with the database  
+	# CHQ: Create a cursor object to interact with the database  
 	cursor = conn.cursor()
 	
-	# Step 4: Create a table called 'employees' with columns 'id', 'name', 'position', and 'salary'
+	# CHQ: Create a table called 'employees' with columns 'id', 'name', 'position', and 'salary'
 	cursor.execute('''CREATE TABLE IF NOT EXISTS employees (id INTEGER PRIMARY KEY, name TEXT, position TEXT, salary REAL)''')
 	conn.commit()
 	
@@ -62,10 +58,7 @@ def get_time():
 	# for x in range(the_count):
 	# 	cursor.execute("INSERT INTO employees (name, position, salary) VALUES (?, ?, ?)", (the_names[the_count], the_fields[the_count], the_salaries[the_count]))
 	# 	conn.commit()
-	
-	
-
-
+	  
 	thisdict = {
 		"Name": "Ford",
 		"Age": "Mustang",
