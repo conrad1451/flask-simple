@@ -71,8 +71,17 @@ def get_time():
 		"Age": "Mustang",
 		"programming": "1964"
 	}
+
+	employee_list = []
+	names_list = []
 	
 	cursor.execute("INSERT INTO employees (name, position, salary) VALUES (?, ?, ?)", ('John Doe', 'Software Engineer', 80000))
+	conn.commit()
+	
+	cursor.execute("INSERT INTO employees (name, position, salary) VALUES (?, ?, ?)", ('Ford Mustang', 'Software Engineer', 78000))
+	conn.commit()
+ 
+	cursor.execute("INSERT INTO employees (name, position, salary) VALUES (?, ?, ?)", ('Mike Johnson', 'Software Engineer', 62000))
 	conn.commit()
 	
 	# Step 6: Query data from the 'employees' table
@@ -81,6 +90,13 @@ def get_time():
 	
 	# Print the rows
 	for row in rows:
+		print(row)
+		
+	# Step 6.4: Query more data from the 'employees' table
+	cursor.execute("SELECT name FROM employees")
+	rows2 = cursor.fetchall()
+	for row in rows2:
+		names_list.append(row)
 		print(row)
 	
 	# Step 7: Update the salary of the employee with id 1
